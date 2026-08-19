@@ -73,19 +73,30 @@
     </footer>
   </main>
 
-  <!-- 🎵 LOOPING BACKGROUND MUSIC - MEDIUM VOLUME -->
-  <audio id="bgMusic" loop preload="auto">
+  <!-- 🎵 MUSIC PLAYER - VISIBLE TO TEST -->
+  <audio id="bgMusic" loop controls preload="auto">
     <source src="youtube-audio.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+    Your browser does not support audio.
   
+
   <script>
   window.addEventListener('DOMContentLoaded', () => {
     const bgMusic = document.getElementById('bgMusic');
-    bgMusic.volume = 0.5; // 50% = medium volume ✅
+    bgMusic.volume = 0.5; // medium volume
+
+    // Log errors so we can see what's wrong
+    bgMusic.onerror = (e) => {
+      console.log('❌ Audio error — file not found or wrong format');
+      alert('Music file not found! Make sure youtube-audio.mp3 is uploaded.');
+    };
 
     const playAudio = () => {
-      bgMusic.play().catch(err => console.log('Click page to enable audio'));
+      bgMusic.play()
+        .then(() => console.log('✅ Music playing!'))
+        .catch(err => console.log('Click to play music:', err));
     };
+
+    // Try on load, then on first click
     playAudio();
     document.addEventListener('click', playAudio, { once: true });
     document.addEventListener('touchstart', playAudio, { once: true });
