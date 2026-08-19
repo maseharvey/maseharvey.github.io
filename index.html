@@ -11,26 +11,21 @@
 <body>
   <div class="static"></div>
   <div class="scanlines"></div>
-
   <main class="page">
     <section class="profile-card glass">
       <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
       <div class="corner corner-bl"></div><div class="corner corner-br"></div>
-
       <div class="photo-wrap">
         <img class="profile-photo" src="profile.jpg" alt="Mase's profile picture">
         <div class="photo-static"></div>
       </div>
-
       <h1>MASE</h1>
       <div class="subtitle">personal.exe</div>
-
       <div class="status">
         <span class="dot"></span>
         <span>alive :)</span>
         <span class="muted">last seen: now</span>
       </div>
-
       <p class="find-me">
         find me:
         <a href="https://www.roblox.com/users/1192146891/profile" target="_blank" rel="noopener noreferrer">roblox</a>
@@ -42,7 +37,6 @@
         <a href="https://www.tiktok.com/@mxqv.2?_r=1&_t=ZN-990u6v1aIhK" target="_blank" rel="noopener noreferrer">tiktok</a>
       </p>
     </section>
-
     <section class="info-card glass">
       <div class="terminal-title"><span>✚</span><span>ABOUT ME</span><span>✚</span></div>
       <div class="about-grid">
@@ -53,38 +47,50 @@
         <div class="about-row"><span class="icon minus">✚</span><span class="plus minus">−</span><span>pls be interesting</span></div>
       </div>
     </section>
-
     <section class="details glass">
       <div class="detail"><span class="label">age</span><span class="value">15</span></div>
       <div class="detail"><span class="label">interests</span><span class="value">riding my bike + listening to music</span></div>
       <div class="detail"><span class="label">music taste</span><span class="value">emo rap · shoegaze · rap</span></div>
       <div class="detail"><span class="label">special people</span><span class="value">you lol, &lt;3</span></div>
     </section>
-
     <section class="links glass">
       <div class="links-heading">/// LINKS</div>
-
       <a class="link-button" href="https://www.roblox.com/users/1192146891/profile" target="_blank" rel="noopener noreferrer">
         <span class="link-icon">◈</span><span>ROBLOX</span><span class="arrow">↗</span>
       </a>
-
       <button class="link-button discord" type="button" data-copy="mxqv1">
         <span class="link-icon">◉</span><span>DISCORD <small>mxqv1</small></span><span class="arrow">copy</span>
       </button>
-
       <a class="link-button" href="https://open.spotify.com/user/n9hlr7vdavii4izr1aapaa4jr?si=wLXa_U6VQmGudezgcaquzQ&utm_source=copy-link&sci=spotify%3Acard-config%3A2OYi1nUfsoLB6EbBLI9itn" target="_blank" rel="noopener noreferrer">
         <span class="link-icon">♫</span><span>SPOTIFY</span><span class="arrow">↗</span>
       </a>
-
       <a class="link-button" href="https://www.tiktok.com/@mxqv.2?_r=1&_t=ZN-990u6v1aIhK" target="_blank" rel="noopener noreferrer">
         <span class="link-icon">♪</span><span>TIKTOK</span><span class="arrow">↗</span>
       </a>
     </section>
-
     <footer>
       <span>mase.exe</span><span>•</span><span>reply fastest on discord</span><span>•</span><span>made with static &lt;3</span>
     </footer>
   </main>
+
+  <!-- 🎵 LOOPING BACKGROUND MUSIC - MEDIUM VOLUME -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="youtube-audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.volume = 0.5; // 50% = medium volume ✅
+
+    const playAudio = () => {
+      bgMusic.play().catch(err => console.log('Click page to enable audio'));
+    };
+    playAudio();
+    document.addEventListener('click', playAudio, { once: true });
+    document.addEventListener('touchstart', playAudio, { once: true });
+  });
+  </script>
 
   <div class="toast" id="toast">discord copied: mxqv1</div>
   <script src="script.js"></script>
